@@ -43,8 +43,9 @@ docker run \
  -e ALLOW_DNS_UPDATES="secure" \
  -e DNS_FORWARDER="10.1.1.1" \
  -e LOG_LEVEL=1 \
- -v samba_config:/etc/samba/
- -v samba_data:/var/lib/samba/
+ -v samba_config:/etc/samba/ \
+ -v samba_data:/var/lib/samba/ \
+ --privileged \
  --restart unless-stopped \
  tundrasoft/samba-ad-docker:latest
 ```
@@ -84,8 +85,9 @@ docker create \
  -e ALLOW_DNS_UPDATES="secure" \
  -e DNS_FORWARDER="10.1.1.1" \
  -e LOG_LEVEL=1 \
- -v samba_config:/etc/samba/
- -v samba_data:/var/lib/samba/
+ -v samba_config:/etc/samba/ \
+ -v samba_data:/var/lib/samba/ \
+ --privileged \
  --restart unless-stopped \
  tundrasoft/samba-ad-docker:latest
 ```
@@ -132,6 +134,7 @@ services:
     volumes:
       - <path to config>:/etc/samba/ # Where transmission should store config files and logs.
       - <path to download>:/var/lib/samba/ # Local path for downloads (complete, incomplete and watch are sub folders)
+    privileged: true
     deploy:
       replicas: 1
       restart_policy:
