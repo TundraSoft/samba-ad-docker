@@ -2,6 +2,8 @@
 
 Samba is Free Software licensed under the GNU General Public License, the Samba project is a member of the Software Freedom Conservancy.
 
+This is based out of https://hub.docker.com/r/instantlinux/samba-dc/
+
 # Usage
 
 **NOTE** - This docker has to be run in privileged mode
