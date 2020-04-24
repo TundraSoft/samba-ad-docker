@@ -134,8 +134,8 @@ services:
       - DNS_FORWARDER="10.1.1.1"
       - LOG_LEVEL=1
     volumes:
-      - <path to config>:/etc/samba/ # Where transmission should store config files and logs.
-      - <path to download>:/var/lib/samba/ # Local path for downloads (complete, incomplete and watch are sub folders)
+      - <path to config>:/etc/samba/ # Samba Config files
+      - <path to download>:/var/lib/samba/ # Path to SAMBA files - Contains Certificate, directory entries etc
     privileged: true
     deploy:
       replicas: 1
